@@ -8,7 +8,7 @@ class Player : public Creature
 
     public:
 
-    Player(const std::string& name = " ");
+    Player(const string& name = " ");
 
     int GetLevel() {return m_level;}
 

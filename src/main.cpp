@@ -3,8 +3,6 @@
 
 int main()
 {
-Player a{"lol"};
-cout<<a.GetDamage();
 
 return 0;
 }
