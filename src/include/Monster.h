@@ -4,6 +4,10 @@
 
 class Monster : public Creature
 {
+private:
+
+static Creature arr[Type::Max_types];
+static const Creature& GetMonster(Type);
 
 public:
 
@@ -15,11 +19,7 @@ enum Type
     Max_types
 };
 
-Monster(Type);
+Monster(Type); 
 
-private:
-
-static Creature arr[Type::Max_types];
-static const Creature& GetMonster(Type);
-
+static Monster GetRandomMonster();
 };

@@ -11,6 +11,14 @@ const Creature& Monster::GetMonster(Type t)
        return arr[t];
 }
 
+Monster Monster::GetRandomMonster()
+{
+    int random {rand() % (static_cast<int>(Monster::Type::Max_types))};
+
+    return Monster(static_cast<Monster::Type>(random));
+    
+}
+
 Creature Monster::arr[Type::Max_types] 
     {
         {"Leviaphan", 'l', 20, 4, 100},
