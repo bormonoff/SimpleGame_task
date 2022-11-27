@@ -1,9 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-
-using namespace std;
+#include "psh.h"
 
 class Creature
 {
@@ -15,7 +12,7 @@ class Creature
 
     public:
 
-    Creature(const string& name = " ", char symbol = ' ', int health = 0, int damage = 0, int gold = 0);
+    Creature(const std::string& name = " ", char symbol = ' ', int health = 0, int damage = 0, int gold = 0);
 
     void ReduceHealth(int ammount);
     void AddGold(int ammount);
@@ -27,5 +24,7 @@ class Creature
     int GetHealth(){return m_health;}
     int GetDamage(){return m_damage;}
     int GetGold(){return m_gold;}
+
+    void AddDamage(int ammount) {m_damage += ammount;}
 
 };
