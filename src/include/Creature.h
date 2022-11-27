@@ -4,6 +4,7 @@
 
 class Creature
 {
+    protected:
     string m_name;
     char m_symbol;
     int m_health;
