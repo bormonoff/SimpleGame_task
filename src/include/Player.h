@@ -10,9 +10,9 @@ class Player : public Creature
 
     Player(const string& name = " ");
 
+    void LelelUp ();
+
     int GetLevel() {return m_level;}
 
-    bool HasWon() {return GetLevel() > 20;}
-
-    void LelelUp () {m_level += 1; AddDamage(1);}
+    bool HasWon() {return GetLevel() > 20;} 
 };

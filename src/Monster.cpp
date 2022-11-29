@@ -1,10 +1,7 @@
 #include "include/Monster.h"
 
 Monster::Monster(Type t)
-    : Creature(GetMonster(t))
-{
-    
-}
+    : Creature(GetMonster(t)){}
 
 const Creature& Monster::GetMonster(Type t)
 {

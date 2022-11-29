@@ -28,5 +28,6 @@ class Creature
 //Simple Setters
     void SetHealth(int value){m_health-=value;}
    
-    void AddDamage(int ammount) {m_gold += ammount;}
+    void AddDamage(int ammount) {m_damage += ammount;}
 };
+

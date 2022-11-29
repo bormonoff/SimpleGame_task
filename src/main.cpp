@@ -1,53 +1,16 @@
 #include "include/Player.h"
 #include "include/Monster.h"
+#include "include/functions.h"
 
-ostream& operator << (ostream & out, const Creature& creature);
-
-int GetRandomNumber(int begin, int end)
-{
-    return begin + rand() % (end + 1);
-}
-
-void FightMonster(Player& player,Monster& monster)
-{
-
-    while(!player.IsDead() && !monster.IsDead())
-    {
-
-        bool Fight;
-        cout<<"What to do? Fight(1) or Run(2)"<<endl;
-        cin>>Fight;
-
-        if(Fight == 1)
-        {
-        
-            monster.SetHealth(player.GetDamage());
-            
-            if (monster.GetHealth() <= 0)
-            {
-                monster.IsDead();
-            }          
-
-            if(!monster.IsDead())
-            {
-            player.SetHealth(monster.GetDamage());
-            }else {  
-                player.AddGold(monster.GetGold()); 
-                player.LelelUp(); }
-                
-        }else
-        {
-            if(GetRandomNumber(0,1))
-            {
-            player.SetHealth(monster.GetDamage());
-            }else{continue;}
-        }
-
-    
-    }
-    return;
-}
-
+/*
+Game
+1. Each round you find a monster
+2. When monster is found you have a choise: to fight or run
+3. If you decide to run there is 50% chance to run (Or you will be attacked by monster)
+4. If you fight you attack first
+5. If you win you improve your level (+1 damage and +2 health)
+6. The game ends when you get the 20 lvl or die
+*/
 
 int main()
 {
@@ -55,7 +18,6 @@ int main()
 srand(time(NULL));
 
 Player player{"Bormon"};
-
 
 while(!player.HasWon() && !player.IsDead())
 {
@@ -66,12 +28,14 @@ while(!player.HasWon() && !player.IsDead())
 
 if (player.HasWon())
 {
-    cout<<"Congrads! You killed them all"<<endl;
+    cout<<"Congrads! You level is 20 & you killed them all"<<endl;
 }
 
 if (player.IsDead())
 {
-    cout<<"Next time bro"<<endl;
+    cout<<endl<<"You have died. Next time bro"<<endl
+        <<"Current lvl is: "<<player.GetLevel()<<" and gold is: "
+        <<player.GetGold()<<endl<<endl;   
 }
 
 return 0;

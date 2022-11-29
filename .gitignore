@@ -3,7 +3,7 @@ player.d
 main.d
 psh.d
 Monster.d
-
+functions.d
 
 .vscode/
 /obj
