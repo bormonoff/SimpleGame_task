@@ -22,3 +22,10 @@ bool Creature::IsDead()
     }
     return 0;
 }
+
+ostream& operator << (ostream & out, const Creature& creature)
+{
+    out<<"You found a " <<creature.GetName()<<" ("<< creature.GetChar()<<")"<<" his damage is: "
+    <<creature.GetDamage()<<" and Health is: "<<creature.GetHealth();
+    return out;
+}

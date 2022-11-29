@@ -19,13 +19,14 @@ class Creature
     void AddGold(int ammount);
     bool IsDead();
     
-//simple getters
-    string GetName(){return m_name;}
-    char GetChar(){return m_symbol;}
-    int GetHealth(){return m_health;}
-    int GetDamage(){return m_damage;}
-    int GetGold(){return m_gold;}
-
-    void AddDamage(int ammount) {m_damage += ammount;}
-
+//Simple Getters
+    string GetName() const {return m_name;}
+    char GetChar() const {return m_symbol;}
+    int GetHealth() const {return m_health;}
+    int GetDamage() const {return m_damage;}
+    int GetGold() const {return m_gold;}
+//Simple Setters
+    void SetHealth(int value){m_health-=value;}
+   
+    void AddDamage(int ammount) {m_gold += ammount;}
 };
